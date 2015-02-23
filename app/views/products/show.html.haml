@@ -1,26 +1,27 @@
-%p
-  %b Title:
-  = product.title
-%p
-  %b Description:
-  = product.description
-%p
-  %b Price:
-  = product.price
+= render :layout => "layouts/center_cols_set" do
+  %p
+    %b Title:
+    = product.title
+  %p
+    %b Description:
+    = product.description
+  %p
+    %b Price:
+    = product.price
 
-%p
-  %b Average Rate
-  = product.average_rating
+  %p
+    %b Average Rate
+    = product.average_rating
 
-%p
-  %b Category
-  = product.category.name
+  %p
+    %b Category
+    = product.category.name
 
-%h3 Reviews
-= render 'reviews/form'
-%br
-= render reviews
+  %h3 Reviews
+  = render 'reviews/form'
+  %br
+  = render reviews
 
-= link_to 'Edit', edit_category_product_path(category.id, product.id) if current_user && product.owner(current_user)
-%br
-= link_to 'Back', category_products_path, class: 'btn btn-primary'
+  = link_to 'Edit', edit_category_product_path(category.id, product.id) if current_user && product.owner(current_user)
+  %br
+  = link_to 'Back', category_products_path, class: 'btn btn-primary'

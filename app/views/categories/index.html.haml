@@ -1,23 +1,24 @@
-- if categories.any?
-  %h1 Listing categories
+= render :layout => "layouts/center_cols_set" do
+  - if categories.any?
+    %h1 Listing categories
 
-  %table.table
-    %tr
-      %th Name
-      %th
-      - if current_user && current_user.admin
-        %th
-        %th
-
-    - categories.each do |category|
+    %table.table
       %tr
-        %td= category.name
-        %td= link_to 'Show', category
+        %th Name
+        %th
         - if current_user && current_user.admin
-          %td= link_to 'Edit', edit_category_path(category)
-          %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
+          %th
+          %th
 
-  %br
-- else
-  %h1 Sorry, there's no categories yet.
-= link_to 'New Category', new_category_path if current_user && current_user.admin 
+      - categories.each do |category|
+        %tr
+          %td= category.name
+          %td= link_to 'Show', category
+          - if current_user && current_user.admin
+            %td= link_to 'Edit', edit_category_path(category)
+            %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
+
+    %br
+  - else
+    %h1 Sorry, there's no categories yet.
+  = link_to 'New Category', new_category_path if current_user && current_user.admin 

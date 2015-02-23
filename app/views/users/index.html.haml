@@ -1,12 +1,13 @@
 - if users.any?
-  %h1 Listing Users
-  %table.table
-    %tr
-      %th Name
-      %th Email
-    - users.each do |user|
+  = render :layout => "layouts/center_cols_set" do
+    %h1 Listing Users
+    %table.table
       %tr
-        %td= link_to user.full_name, user_path(user.id)
-        %td= user.email
+        %th Name
+        %th Email
+      - users.each do |user|
+        %tr
+          %td= link_to user.full_name, user_path(user.id)
+          %td= user.email
 - else
   %h1 Sorry, there's no users yet.
