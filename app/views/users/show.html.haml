@@ -1,0 +1,26 @@
+%p
+  %b First Name:
+  = user.firstname.capitalize
+%p
+  %b Last Name:
+  = user.lastname.capitalize
+%p
+  %b Email:
+  = user.email
+%p
+  %b About Me:
+  = user.about_me.html_safe unless user.about_me.nil?
+%p
+%p
+  -if user.reviews.any?
+    .col-lg-6.col-sm-8.col-xs-12
+      %b Last Reviews:
+      %br
+      %br
+        %table.table
+          %tr
+            %th Name
+            %th Rate
+            %th Product
+            %th Date
+          = user.last_reviews.html_safe

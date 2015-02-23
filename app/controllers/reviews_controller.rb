@@ -1,9 +1,11 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
+
+#IMHO user should create only one review per product, but there was not such an issue.
 
   expose(:review)
   expose(:product)
   expose(:category)
-
 
   def edit
   end

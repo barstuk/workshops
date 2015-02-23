@@ -1,0 +1,48 @@
+menu:
+  edit:
+    title: 'Edit'
+    items: 'undo redo | cut copy paste pastetext | selectall'
+  format:
+    title: 'Format'
+    items: 'bold italic underline| formats | removeformat'
+
+toolbar:
+  - undo redo | styleselect | bold italic underline | link | blockquote | forecolor backcolor 
+
+style_formats:
+  - title: Inline
+    items:
+      - title: 'Bold'
+        format: 'bold'
+        icon: 'bold'
+      - title: 'Italic'
+        format: 'italic'
+        icon: 'italic'
+  - title: Headings
+    items:
+      - title: 'Header 1'
+        format: 'h1'
+      - title: 'Header 2'
+        format: 'h2'
+      - title: 'Header 3'
+        format: 'h3'
+      - title: 'Header 4'
+        format: 'h4'
+      - title: 'Header 5'
+        format: 'h5'
+      - title: 'Header 5'
+        format: 'h6'
+
+plugins:
+  - link
+  - advlist
+  - autolink
+  - visualblocks
+  - textcolor
+
+visualblocks_default_state: true
+relative_urls : false
+remove_script_host : false
+link_title: false
+link_target: false
+height: 300

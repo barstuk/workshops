@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
 
+  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
+
   decent_configuration do
     strategy DecentExposure::StrongParametersStrategy
   end
-
-
 
   def authorize_admin!
     logger.error "Attempt to access admin path by user with id:#{current_user.id}"
@@ -19,4 +19,11 @@ class ApplicationController < ActionController::Base
   end
 
   protect_from_forgery with: :exception
+
+  private
+
+  def record_not_found
+    redirect_to root_path, flash: { error: "Sorry, not found." }
+  end
+
 end

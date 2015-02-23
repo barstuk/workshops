@@ -1,3 +1,4 @@
+= tinymce
 = render :layout => "layouts/center_cols_set" do
   %h2
     Edit #{resource_name.to_s.humanize}
@@ -5,6 +6,9 @@
     = f.error_notification
     .form-inputs
       = f.input :email, required: true, autofocus: true
+      = f.input :firstname, required: true
+      = f.input :lastname, required: true
+      = f.input :about_me, required: false, input_html: { class: 'tinymce' } 
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         %p
           Currently waiting confirmation for: #{resource.unconfirmed_email}

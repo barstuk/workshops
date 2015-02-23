@@ -6,6 +6,7 @@
       %th Title
       %th Description
       %th Price
+      %th Rate
       %th
       - if current_user && current_user.admin
         %th
@@ -17,6 +18,7 @@
         %td= product.title
         %td= product.description
         %td= product.price
+        %td= product.average_rating
         %td= link_to 'Show', category_product_path(product.category, product)
         - if current_user && product.owner(current_user)
           %td= link_to 'Edit', edit_category_product_path(product.category, product) 

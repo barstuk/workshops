@@ -4,8 +4,7 @@
 
 %p
   - category.products.each do |product|
-    = product.title
-
+    = link_to product.title, category_product_path(product.category, product)
 %p
   %h3 New product
   = render 'products/form'

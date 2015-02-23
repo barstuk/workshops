@@ -196,6 +196,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
+    tinymce-rails (4.1.6)
+      railties (>= 3.1.1)
     travis (1.7.4)
       addressable (~> 2.3)
       backports
@@ -238,12 +240,13 @@ DEPENDENCIES
   pry
   quiet_assets
   rails (= 4.1.8)
-  rails_12factor (~> 0.0.3)
+  rails_12factor
   rspec-rails
   sass-rails!
   shoulda-matchers
   simple_form (~> 3.1.0rc)
   spring
   therubyracer
+  tinymce-rails (~> 4.1.6)
   travis
   uglifier

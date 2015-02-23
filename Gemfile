@@ -19,6 +19,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'travis'
 gem 'ffaker'
 gem 'konf'
+gem 'tinymce-rails', '~> 4.1.6'
 
 group :development do
   gem 'spring'
@@ -35,7 +36,6 @@ group :test do
   gem 'database_cleaner'
 end
 
-group :production do
-  gem 'rails_12factor', '~> 0.0.3'
-end
+gem 'rails_12factor', group: :production
+
 ruby '2.1.5'

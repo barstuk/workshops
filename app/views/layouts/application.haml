@@ -15,7 +15,9 @@
         .navbar-header
           =link_to AppConfig.workshops_name, root_path, class: "navbar-brand"
         %p.navbar-text.navbar-right
+          = link_to 'Users', users_path
           - if user_signed_in?
+            = link_to 'Edit profile', edit_user_registration_path
             = link_to('Logout', destroy_user_session_path, :method => :delete)
           - else
             = link_to('Sign in', new_user_session_path, :method => :get)
