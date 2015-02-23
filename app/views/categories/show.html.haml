@@ -1,0 +1,17 @@
+%p
+  %b Name:
+  = category.name
+
+%p
+  - category.products.each do |product|
+    = product.title
+
+%p
+  %h3 New product
+  = render 'products/form'
+
+= link_to 'Products', category_products_path(category)
+#br
+= link_to 'Edit', edit_category_path(category) if current_user && current_user.admin
+#br
+= link_to 'Back', categories_path, class: 'btn btn-primary'

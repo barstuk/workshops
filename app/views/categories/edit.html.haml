@@ -1,0 +1,8 @@
+= render :layout => "layouts/center_cols_set" do
+  %h1 Editing category
+
+  = render 'form'
+  %br
+  = link_to 'Show', category, class: 'btn btn-primary'
+  \|
+  = link_to 'Back', categories_path, class: 'btn btn-primary'

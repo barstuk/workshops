@@ -1,0 +1,26 @@
+- if products.any?
+  %h1 Listing products
+
+  %table.table
+    %tr
+      %th Title
+      %th Description
+      %th Price
+      %th
+      - if current_user && current_user.admin
+        %th
+        %th
+
+
+    - products.each do |product|
+      %tr
+        %td= product.title
+        %td= product.description
+        %td= product.price
+        %td= link_to 'Show', category_product_path(product.category, product)
+        - if current_user && product.owner(current_user)
+          %td= link_to 'Edit', edit_category_product_path(product.category, product) 
+          %td= link_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }
+- else
+  %h1 Sorry, there's no products for this category yet.
+%br

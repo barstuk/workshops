@@ -1,0 +1,12 @@
+= form_for category do |f|
+  - if category.errors.any?
+    #error_explanation
+      %ul
+        - category.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control'
+
+  = f.submit 'Save', class: 'btn btn-default'
