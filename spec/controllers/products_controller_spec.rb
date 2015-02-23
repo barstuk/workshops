@@ -10,6 +10,7 @@ describe ProductsController do
       description: 'Some description',
       price: 2.5,
       category_id: category.id,
+      user_id: 1
     }
   end
 

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe UserDecorator do
 
-  let(:user) { build(:user, firstname: 'John', lastname: 'Doe') }
+  let(:user) { described_class.new(build(:user, firstname: 'John', lastname: 'Doe')) }
 
   describe '#full_name' do
     it 'displays user fullname' do

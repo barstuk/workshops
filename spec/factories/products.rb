@@ -3,7 +3,7 @@ FactoryGirl.define do
     title "MyString"
     description "MyText"
     price 1.5
-    user
+    user_id 1
     category
   end
 end
