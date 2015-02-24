@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  expose_decorated(:users)
+  expose_decorated(:users) { User.users_only.decorate }
   expose_decorated(:user)
 
 

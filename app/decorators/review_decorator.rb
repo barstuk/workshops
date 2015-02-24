@@ -4,5 +4,4 @@ class ReviewDecorator < Draper::Decorator
   def author
     "#{user.firstname.capitalize} #{user.lastname.capitalize}"
   end
-
 end

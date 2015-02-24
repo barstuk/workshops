@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   has_many :products
   validates_presence_of :firstname, :lastname
 
+  scope :users_only, -> { where(admin: false) }
+  scope :admins_only, -> { where(admin: true) }
 end

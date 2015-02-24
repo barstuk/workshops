@@ -14,11 +14,11 @@ jan = User.create(firstname: 'Jan', lastname: 'Kowalski', email: 'jk@gmail.com',
                   about_me: "<h1><span style=\"color: #993300;\">Hello!</span></h1>\r\n<p><span style=\"color: #000000; background-color: #00ccff;\">It's a part about me!<br /></span></p>\r\n<p><span style=\"color: #000000; background-color: #ffffff;\">You can edit it on <a href=\"http://netguru-workshops-by-barstuk.herokuapp.com/\">edit informations about yourself</a></span></p>\r\n<h3><strong><span style=\"color: #ff0000; background-color: #ffffff;\">ENJOY!!</span></strong></h3>" )
 #sorry for this long line  : <
 john = User.create(firstname: 'John', lastname: 'Smith', email: 'jessie@gmail.com',
-            password: 'secretpass')
+                   password: 'secretpass')
 User.create(firstname: 'Stanisław', lastname: 'Nowak', email: 'sn@gmail.com',
             password: 'pass12345')
 dawid = User.create(firstname: 'Dawid', lastname: 'Zięba', email: 'dz@gmail.com',
-            password: 'password123')
+                    password: 'password123')
 User.create(firstname: 'Adam', lastname: 'Małysz', email: 'am@gmail.com',
             password: 'passwordpassword')
 
